@@ -1,0 +1,80 @@
+[16:00] Karunakar Eeede
+
+Write a query to retrieve the customer_id, first_name, and last_name of all customers sorted by customer_id in ascending order.
+
+ select * from coustomer order by coustomer_id asc;
+
+Write a query to retrieve the order_id and item of all orders sorted by order_id in descending order.
+ select * from coustomer order by coustomer_id desc;
+
+Write a query to retrieve the shipping_id, status, and customer of all shippings sorted by shipping_id in ascending order.
+
+select * from shippings order by shipping_id asc;
+
+Write a query to retrieve the first_name and last_name of all customers whose first_name starts with 'J'.
+
+ select frist_name,last_name from Coustomer where frist_name like 'j%';
+
+Write a query to retrieve the item and amount of all orders where the amount is greater than or equal to 100.
+
+select item, amount from orders where amount >= 100;
+
+Write a query to retrieve the status of all shippings where the status is either 'Shipped' or 'Delivered'.
+
+select status from shippings where status = 'Shipped' OR status = 'Delivered';
+
+Write a query to retrieve the first_name, last_name, and age of all customers whose age is between 25 and 35.
+
+select customer_id, first_name, last_name, age from customer where age between 25 and 35;
+
+Write a query to retrieve the customer_id, first_name, last_name, and country of all customers from a specific country, e.g., 'USA'.
+
+select customer_id, first_name, last_name, country from customers where country = 'USA';
+
+
+Write a query to retrieve the order_id, item, and amount of all orders where the item contains the word 'book'.
+
+select order_id, item, amount from Orders where  item= 'book';
+
+Write a query to retrieve the shipping_id, status, and customer of all shippings where the customer is not null.
+
+select shipping_id,status,customer from shippings where customer is not null;
+
+Write a query to retrieve the first_name, last_name, and age of all customers in alphabetical order by last_name, and for customers with the same last_name, sort them by first_name in ascending order.
+
+select first_name, last_name, age from customer order BY last_name asc, first_name asc;
+
+Write a query to retrieve the customer_id, first_name, last_name, and country of all customers from countries other than 'USA' or 'UK'.
+select customer_id, first_name, last_name, country from customer where country NOT IN ('USA', 'UK');
+
+Write a query to retrieve the order_id, item, and amount of all orders where the amount is between 50 and 100, inclusive.
+
+select order_id, item, amount from orders where amount between 50 and 100;
+
+
+Write a query to retrieve the shipping_id, status, and customer of all shippings where the status is not 'Cancelled'.
+
+select shipping_id, status, customer from shippings where status != 'Cancelled';
+
+
+Write a query to retrieve the first_name, last_name, and age of the oldest customer.
+select first_name, last_name, age from customers where age = (select max(age) from customers);
+
+Write a query to retrieve the customer_id, first_name, last_name, and country of all customers in descending order by customer_id.
+
+select customer_id, first_name, last_name, country from customer order by customer_id desc;
+
+Write a query to retrieve the order_id, item, and amount of all orders where the item starts with 'A' and ends with 'Z'.
+
+select order_id, item, amount from orders where item like 'A%Z';
+
+Write a query to retrieve the shipping_id, status, and customer of all shippings where the status is 'Pending' and the customer is not null.
+select shipping_id, status, customer from shippings where status = 'Pending' and customer is not null;
+
+
+Write a query to retrieve the first_name, last_name, and age of all customers whose age is not in the range of 20 to 30.
+select first_name, last_name, age from customer where age < 20 or age > 30;
+
+
+Write a query to retrieve the customer_id, first_name, last_name, and country of all customers whose country is 'USA' and whose first_name contains the letter 'a'.
+select customer_id, first_name, last_name, country from customers where country = 'USA' and first_name like '%a%';
