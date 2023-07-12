@@ -1,0 +1,261 @@
+1.Write a Java Program to reverse each word in String?
+
+import java.util.*;
+
+public class Reverse {
+public static void main(String args[]) {
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter the String");
+	String originalStr = s.next();
+	String reversedStr = "";
+	for (int i = 0; i < originalStr.length(); i++) {
+	  reversedStr = originalStr.charAt(i) + reversedStr;
+	}
+	System.out.println("Reversed string: "+ reversedStr);
+
+}
+}
+
+2.Write a Java Program to Concat Two Strings without Using Library Function?
+
+import java.util.Scanner;
+
+public class ConcatenateStrings {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the first string: ");
+        String str1 = s.nextLine();
+        System.out.print("Enter the second string: ");
+        String str2 = s.nextLine();
+        char[] charArray1 = str1.toCharArray();
+        char[] resultCharArray = new char[str1.length() + str2.length()];
+        for (int i = 0; i < charArray1.length; i++) {
+            resultCharArray[i] = charArray1[i];
+        }
+        int startPos = charArray1.length;
+        for (int i = 0; i < str2.length(); i++) {
+            resultCharArray[startPos + i] = str2.charAt(i);
+        }
+        String resultString = new String(resultCharArray);
+        System.out.println("Concatenated String: " + resultString);
+    }
+}
+
+
+3.Write a Java Program to Find the Frequency of Characters?
+
+import java.util.Scanner;
+
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = s.nextLine();
+        int[] freq = new int[str.length()];
+        char[] ch = str.toCharArray();
+        for(int i = 0; i < str.length(); i++) {
+            freq[i] = 1;
+            for(int j = i+1; j < str.length(); j++) {
+                if(ch[i] == ch[j]) {
+                    freq[i]++;
+                    ch[j] = '0';
+                }
+            }
+        }
+        System.out.println("Character Frequency:");
+        for(int i = 0; i < freq.length; i++) {
+            if(ch[i] != ' ' && ch[i] != '0')
+                System.out.println(ch[i] + " occurs " + freq[i] + " times");
+        }
+    }
+}
+
+
+4.Write a Java Program to capitalize first letter of each word?
+
+import java.util.Scanner;
+
+public class CapitalizeFirstLetter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+        String[] words = str.split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            sb.append(Character.toUpperCase(word.charAt(0)))
+              .append(word.substring(1)).append(" ");
+        }
+        String capitalizedStr = sb.toString().trim();
+        System.out.println("Capitalized string: " + capitalizedStr);
+    }
+}
+
+5.Write a Java Program to Remove all occurrences of a character in a string?
+
+import java.util.Scanner;
+
+public class RemoveChar {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+        System.out.print("Enter a character to remove: ");
+        char ch = scanner.next().charAt(0);
+        String newStr = removeChar(str, ch);
+        System.out.println("New string after removing " + ch + ": " + newStr);
+    }
+    private static String removeChar(String str, char ch) {
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            if (c != ch) {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+}
+
+6.Write a Java Program to Count the Frequency of Each Vowel in a given String?
+
+public class VowelFrequency {
+    public static void main(String[] args) {
+        String input = "This is a sample string";
+        int countA = 0, countE = 0, countI = 0, countO = 0, countU = 0;
+
+   input = input.toLowerCase();
+        for(int i = 0; i < input.length(); ++i) {
+            char ch = input.charAt(i);
+            if(ch == 'a') {
+                countA++;
+            } else if(ch == 'e') {
+                countE++;
+            } else if(ch == 'i') {
+                countI++;
+            } else if(ch == 'o') {
+                countO++;
+            } else if(ch == 'u') {
+                countU++;
+            }
+        }
+ System.out.println("Frequency of each vowel:");
+        System.out.println("a: " + countA);
+        System.out.println("e: " + countE);
+        System.out.println("i: " + countI);
+        System.out.println("o: " + countO);
+        System.out.println("u: " + countU);
+    }
+}
+
+
+
+7.Write a Java Program to Check if two strings are anagram or not?
+
+import java.util.Arrays;
+
+public class AnagramChecker {
+    public static void main(String[] args) {
+        String str1 = "race";
+        String str2 = "care";
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+        if (str1.length() != str2.length()) {
+            System.out.println("The two strings are not anagrams.");
+        } else {
+            char[] charArray1 = str1.toCharArray();
+            Arrays.sort(charArray1);
+            char[] charArray2 = str2.toCharArray();
+            Arrays.sort(charArray2);
+            if (Arrays.equals(charArray1, charArray2)) {
+                System.out.println("The two strings are anagrams.");
+            } else {
+                System.out.println("The two strings are not anagrams.");
+            }
+        }
+    }
+}
+
+8.Write a Java Program to Swap two Strings Without Using any Third Variable?
+
+public class StringSwapper {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+        System.out.println("Before swapping:");
+        System.out.println("str1 = " + str1);
+        System.out.println("str2 = " + str2);
+        str1 = str1 + str2;
+        str2 = str1.substring(0, str1.length() - str2.length());
+        str1 = str1.substring(str2.length());
+        System.out.println("\nAfter swapping:");
+        System.out.println("str1 = " + str1);
+        System.out.println("str2 = " + str2);
+    }
+}
+
+9.Write a Java Program to check a string is immutable or not?
+public class ImmutableStringExample {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+        String str3 = str1.concat(str2); 
+        if (str1 == str3) {
+            System.out.println("The string is immutable");
+        } else {
+            System.out.println("The string is mutable");
+        }
+    }
+}
+
+
+10.Write a Java program to check whether a string is a Palindrome?
+
+import java.util.*;
+public class Palindrome {
+public static void main(String args[]) {
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter the String");
+	String originalStr = s.next();
+	String reversedStr = "";
+	for (int i = 0; i < originalStr.length(); i++) {
+	  reversedStr = originalStr.charAt(i) + reversedStr;
+	}
+  if (originalStr.equals(reversedStr)){
+	  	System.out.println(originalStr + "is  Plaindrome ");
+	  }
+	  else{
+	  System.out.println(originalStr + "is  notPlaindrome ");
+	  }
+}
+}
+
+11.Write a Java Program to reverse a word ?
+import java.util.Scanner;
+
+public class ReverseWord {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = s.nextLine();
+        String reversedWord = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversedWord = reversedWord + word.charAt(i);
+        }
+        System.out.println("Reversed word: " + reversedWord);
+    }
+}
+
+12.How to check if two strings are the same ignoring their cases?
+string1 = "HELLO"
+string2 = "hello"
+
+if string1.lower() == string2.lower():
+  System.out.println("The strings are the same ignoring case.")
+else:
+    System.out.println("The strings are different.")
+
+13.How to convert string to integer?
+
+String str = "123";
+int number = Integer.parseInt(str);
