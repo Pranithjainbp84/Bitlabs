@@ -1,0 +1,395 @@
+class Arrays
+  {
+    public static void main(String args[])
+    {
+      int a[]={10,20,30,40,50};
+      int i;
+      System.out.println("The Elements in is Array is:");
+      for(i=0;i<5;i++)
+        {
+          System.out.println(a[i]);
+          }
+    }
+  }
+  
+  
+  import java.util.Scanner;
+class Arrays
+  {
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner(System.in);
+      int n,i;
+      System.out.println("Enter Size of Array:");
+      n=sc.nextInt();
+      int a[]=new int[n];
+      System.out.println("Enter Elements to Array:");
+      for(i=0;i<a.length;i++)
+        {
+          a[i]=sc.nextInt();
+        }
+      System.out.println("The Elements in is Array is:");
+      for(i=0;i<a.length;i++)
+        {
+          System.out.println(a[i]);
+        }
+    }
+  }
+  
+ import java.util.Scanner;
+class Arrays
+  {
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner(System.in);
+      int n,i,sum=0;
+      System.out.println("Enter Size of Array:");
+      n=sc.nextInt();
+      int a[]=new int[n];
+      System.out.println("Enter Elements to Array:");
+      for(i=0;i<a.length;i++)
+        {
+          a[i]=sc.nextInt();
+        }
+      System.out.println("The Elements in is Array is:");
+      for(i=0;i<a.length;i++)
+        {
+          System.out.println(a[i]);
+          sum=sum+a[i];
+        }
+      System.out.println("The Sum of an Array is:"+sum);
+    }
+  }
+  
+  element searching
+  import java.util.Scanner;
+class Arrays
+  {
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner(System.in);
+      int n,i,ser;
+      System.out.println("Enter Size of Array:");
+      n=sc.nextInt();
+      int a[]=new int[n];
+      System.out.println("Enter Elements to Array:");
+      for(i=0;i<a.length;i++)
+        {
+          a[i]=sc.nextInt();
+        }
+      System.out.println("The Elements in is Array is:");
+      for(i=0;i<a.length;i++)
+        {
+          System.out.println(a[i]);
+        }
+      System.out.println("Enter the value for Search:");
+      ser=sc.nextInt();
+      //Learner Search
+      for(i=0;i<a.length;i++)
+        {
+          if(ser==a[i])
+          {
+            System.out.println("Element is Found");
+            break;
+          }
+        }
+      if(i==n)
+      {
+        System.out.println("Element is Not Found");
+      }
+    }
+  }
+  
+  
+
+
+50. Write a JAVAprogram to print all negative elements in an array.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n,i;
+      System.out.println("Enter Size of Array:");
+      n=sc.nextInt();
+      int a[]=new int[n];
+      System.out.println("Enter Elements to Array:");
+      for(i=0;i<a.length;i++)
+        {
+          a[i]=sc.nextInt();
+        }
+        System.out.println("Negative elements in the array are:");
+        for ( i = 0; i < a.length; i++) {
+            if (a[i] < 0) {
+                System.out.println(a[i]);
+            }
+        }
+    }
+}
+
+51. Write a JAVAprogram to find second largest element in an array.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (i = 0; i < a.length; i++) {
+            if (a[i] > largest) {
+                secondLargest = largest;
+                largest = a[i];
+            } else if (a[i] > secondLargest && a[i] != largest) {
+                secondLargest = a[i];
+            }
+        }
+        System.out.println("The second largest element in the array is: " + secondLargest);
+    }
+}
+
+52. Write a JAVAprogram to find maximum and minimum element in an array. 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }
+        int maximum = Integer.MIN_VALUE;
+        int minimum = Integer.MAX_VALUE;
+        for (i = 0; i < a.length; i++) {
+            if (a[i] > maximum) {
+                maximum = a[i];
+            }
+            if (a[i] < minimum) {
+                minimum = a[i];
+            }
+        }
+        System.out.println("The maximum element in the array is: " + maximum);
+        System.out.println("The minimum element in the array is: " + minimum);
+    }
+}
+
+53. Write a JAVAprogram to count total number of even and odd elements in an array.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }        
+        int evencount = 0;
+        int oddcount = 0;
+        for (int number : a) {
+            if (number % 2 == 0) {
+                evencount++;
+            } else {
+                oddcount++;
+            }
+        }
+        System.out.println("Total even numbers: " + evencount);
+        System.out.println("Total odd numbers: " + oddcount);
+    }
+}
+
+54. Write a JAVAprogram to count total number of negative elements in an array.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }    
+        int Count = 0;
+        for (int number : a) {
+            if (number < 0) {
+                Count++;
+        }
+}
+        System.out.println("Total negative numbers: " + Count);
+       
+    }
+}
+
+55. Write a JAVAprogram to copy all elements from an array to another array.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }     
+        int copyArray[] = new int[n];  
+        for (i = 0; i < a.length; i++) {
+            copyArray[i] = a[i];
+        }
+        System.out.println("Elements copied to another array.");
+        System.out.print("Copied array: ");
+        for (int element : copyArray) {
+            System.out.print(element + " ");
+        }
+    }
+	
+56. Write a JAVAprogram to delete an element from an array at specified position.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }
+        System.out.println("Enter the position of the element to delete (0-indexed):");
+        int p = sc.nextInt();
+        if (p >= 0 && p < a.length) {  
+            int c[] = new int[a.length - 1];
+            for (i = 0; i < p; i++) {
+                c[i] = a[i];
+            }
+            for (i = p; i < c.length; i++) {
+                c[i] = a[i + 1];
+            }
+            System.out.println("Element at position " + p + " deleted.");
+            System.out.print("Updated array: ");
+            for (int element : c) {
+                System.out.print(element + " ");
+            }
+        } else {
+            System.out.println("Invalid position!");
+        }
+    }
+}
+
+57. Write a JAVAprogram to count frequency of each element in an array.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+        n = sc.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
+        }
+ int [] fr = new int [n]; 
+         int visited = -1;  
+        for( i = 0; i < a.length; i++){  
+            int count = 1;  
+            for(int j = i+1; j < a.length; j++){  
+                if(a[i] == a[j]){  
+                    count++;  
+                    fr[j] = visited;  
+                }  
+            }  
+            if(fr[i] != visited)  
+                fr[i] = count;  
+        } 
+        System.out.println(" Element | Frequency");  
+        for( i = 0; i < fr.length; i++){  
+            if(fr[i] != visited)  
+                System.out.println("    " + a[i] + "    |    " + fr[i]);  
+        }  
+    }
+        }
+		
+58. Write a JAVAprogram to print all unique elements in the array.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+          n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }   
+        for ( i = 0; i < arr.length; i++) {
+            int Unique = 1;       
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    Unique = 0;
+                    break;
+                }
+            }
+            if (Unique==1) {
+                System.out.println("The unique Elements" + arr[i]);
+            }
+        }
+    }
+}
+
+59. Write a JAVAprogram to count total number of duplicate elements in an array.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, i;
+        System.out.println("Enter Size of Array:");
+          n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter Elements to Array:");
+        for (i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }    
+        int Duplicates = 0;
+        for ( i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == -1) {
+                continue;
+            }
+            int count = 1;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    arr[j] = -1; 
+                }
+            }
+            if (count > 1) {
+                Duplicates = Duplicates + count - 1;
+            }
+        }
+        System.out.println("Total number of duplicate elements: " + Duplicates);
+    }
+}
