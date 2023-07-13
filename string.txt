@@ -1,0 +1,288 @@
+64. Write a JAVAprogram to find length of a string and compare and concatenate two strings.
+
+ import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first string: ");
+        String firstString = sc.nextLine();
+        System.out.print("Enter the second string: ");
+        String secondString = sc.nextLine();
+        int lengthOfFirstString = firstString.length();
+        System.out.println("Length of the first string: " + lengthOfFirstString);    
+        boolean areEqual = firstString.equals(secondString);
+        System.out.println("Are the two strings equal? " + areEqual);   
+        String concatenatedString = firstString.concat(secondString);
+        System.out.println("Concatenated string: " + concatenatedString);
+    }
+}
+
+
+65. Write a JAVAprogram to find total number of alphabets, digits or special character in a string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String Str = sc.nextLine();
+        int alphabetCount = 0;
+        int digitCount = 0;
+        int specialCount = 0; 
+        for (int i = 0; i < Str.length(); i++) {
+            char c = Str.charAt(i);
+            if (Character.isLetter(c)) {
+                alphabetCount++;
+            }           
+            else if (Character.isDigit(c)) {
+                digitCount++;
+            }        
+            else {
+                specialCount++;
+            }
+        }
+        System.out.println("Total number of alphabets: " + alphabetCount);
+        System.out.println("Total number of digits: " + digitCount);
+        System.out.println("Total number of special characters: " + specialCount);
+    }
+}
+
+66. Write a JAVAprogram to count total number of vowels and consonants in a string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String Str = sc.nextLine().toLowerCase();
+        int vowelCount = 0;
+        int consonantCount = 0;
+        for (int i = 0; i < Str.length(); i++) {
+            char ch = Str.charAt(i);
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    vowelCount++;
+                } else {
+                    consonantCount++;
+                }        
+        }
+        System.out.println("Total number of vowels: " + vowelCount);
+        System.out.println("Total number of consonants: " + consonantCount);
+    }
+}
+
+77. Write a JAVAprogram to count total number of words in a string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String Str = sc.nextLine();
+             int wordcount = Str.split("\\s").length;
+           
+System.out.println("Total number of words: " + wordcount);
+}
+}
+
+
+68. Write a JAVAprogram to find reverse of a string.
+. import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String rev = "";
+        for (int i = 0; i < str.length(); i++) {
+          rev = str.charAt(i) + rev;          
+        }
+        System.out.println("reverse of string is: " + rev);      
+    }
+}
+69. Write a JAVAprogram to check whether a string is palindrome or not.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String rev = "";
+        for (int i = 0; i < str.length(); i++) {
+          rev = str.charAt(i) + rev;          
+        }
+       if (str.equals(rev)){
+           System.out.println(str + " is plaindrome :");
+       }
+       else{
+          System.out.println(str + " is not plaindrome :"); 
+       }       
+    }
+}
+
+70. Write a JAVAprogram to find first occurrence of a character in a given string
+.import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String Str = sc.nextLine();
+        System.out.print("Enter the character to find: ");
+        char Ch = sc.next().charAt(0);
+        int firstOccurrence = -1;     
+        for (int i = 0; i < Str.length(); i++) {
+            if (Str.charAt(i) == Ch) {
+                firstOccurrence = i;
+                break; 
+            }
+        }
+        if (firstOccurrence != -1) {
+            System.out.println("The character '" + Ch + "' is first found at index " + firstOccurrence);
+        } else {
+            System.out.println("The character '" + Ch + "' is not found in the string.");
+        }
+    }
+}
+71. Write a JAVAprogram to find last occurrence of a character in a given string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String Str = sc.nextLine();
+        System.out.print("Enter the character to find: ");
+        char Ch = sc.next().charAt(0);
+        int lastOccurrence = -1;      
+        for (int i = 0; i < Str.length(); i++) {
+            if (Str.charAt(i) == Ch) {
+                lastOccurrence = i;             
+            }
+        }
+        if (lastOccurrence != -1) {
+            System.out.println("The character '" + Ch + "' is last found at index " + lastOccurrence);
+        } else {
+            System.out.println("The character '" + Ch + "' is not found in the string.");
+        }
+    }
+}
+72. Write a JAVAprogram to search all occurrences of a character in given string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String Str = sc.nextLine();
+        System.out.println("Enter the character to find: ");
+        char Ch = sc.next().charAt(0);
+        System.out.println("All occurrences of the character '" + Ch + "':");       
+        for (int i = 0; i < Str.length(); i++) {
+            if (Str.charAt(i) == Ch) {
+                System.out.println("Found at index " + i);
+            }
+        }
+    }
+}
+
+73. Write a JAVAprogram to count occurrences of a character in given string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String Str = sc.nextLine();
+        System.out.println("Enter the character to find: ");
+        char Ch = sc.next().charAt(0);
+        System.out.println("All occurrences of the character '" + Ch + "':");
+       int count = 0;
+        for (int i = 0; i < Str.length(); i++) {
+            if (Str.charAt(i) == Ch) {
+                count++;
+            }
+        }
+         System.out.println("Occurrences of the character '" + Ch + "': " + count);
+    }
+}
+
+74. Write a JAVAprogram to find highest frequency character in a string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String Str = sc.nextLine();
+  
+   int[] frequency = new int[256];      
+        for (int i = 0; i < Str.length(); i++) {
+            char ch = Str.charAt(i);
+            frequency[ch]++;
+        }
+          int highestFrequency = Integer.MIN_VALUE;   
+           for (int i = 0; i < 256; i++) {
+            if ( frequency[i] > 0) {
+               highestFrequency = Math.max(highestFrequency, frequency[i]);
+            }
+        }
+          System.out.println("Characters with the highest frequency:");
+           for (int i = 0; i < 256; i++) {
+            if( frequency[i] == highestFrequency){
+                System.out.println("'" + (char) i + "' with frequency " + highestFrequency);          
+            }
+        }
+}
+}
+75. Write a JAVAprogram to find lowest frequency character in a string.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String Str = sc.nextLine();
+  
+   int[] frequency = new int[256];      
+        for (int i = 0; i < Str.length(); i++) {
+            char ch = Str.charAt(i);
+            frequency[ch]++;
+        }
+          int lowestFrequency = Integer.MAX_VALUE;       
+           for (int i = 0; i < 256; i++) {
+            if ( frequency[i] > 0) {
+               lowestFrequency = Math.min(lowestFrequency, frequency[i]);
+            }
+        }
+          System.out.println("Characters with the lowest frequency:");
+           for (int i = 0; i < 256; i++) {
+            if( frequency[i] == lowestFrequency){
+                System.out.println("'" + (char) i + "' with frequency " + lowestFrequency);          
+            }
+        }
+}
+}
+76. Write a JAVAprogram to count frequency of each character in a string
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String Str = sc.nextLine();
+  
+   int[] frequency = new int[256];      
+        for (int i = 0; i < Str.length(); i++) {
+            char ch = Str.charAt(i);
+            frequency[ch]++;
+        }
+        for (int i = 0; i < 256; i++) {
+            if (frequency[i] > 0) {
+                System.out.println("Character '" + (char) i + "' occurs " + frequency[i] + " time(s)");
+            }
+        }
+    }
+}
